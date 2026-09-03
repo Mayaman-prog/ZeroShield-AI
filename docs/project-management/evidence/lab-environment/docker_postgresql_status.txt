@@ -1,0 +1,15 @@
+ZeroShield AI - Docker and PostgreSQL Environment
+
+Software Versions:
+Docker version 29.5.2, build 79eb04c
+Docker Compose version v5.1.4
+psql (PostgreSQL) 18.4
+
+PostgreSQL Container Status:
+Image=postgres:18.4 Status=running Health=healthy
+
+Port Binding:
+5432/tcp -> 127.0.0.1:5433
+
+PostgreSQL Health Check:
+/var/run/postgresql:5432 - accepting connections
