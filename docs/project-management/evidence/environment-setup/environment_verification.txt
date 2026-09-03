@@ -1,0 +1,14 @@
+ZeroShield AI environment verification
+Python: 3.14.4
+Executable: D:\ZeroShield-AI\.venv\Scripts\python.exe
+
+fastapi: 0.141.1 [OK]
+uvicorn: 0.52.4 [OK]
+pydantic: 2.13.5 [OK]
+numpy: 2.5.2 [OK]
+pandas: 3.0.5 [OK]
+scikit-learn: 1.9.0 [OK]
+xgboost: 3.4.1 [OK]
+joblib: 1.5.3 [OK]
+
+Environment verification PASSED
