@@ -1,0 +1,3 @@
+SHA256 hash of data\raw\ingestion\suricata\suricata-alert-sample.json:
+8b8261f852cebdf2f2939306c80e416295333e200d96541ce0d69fd11fe2a309
+CertUtil: -hashfile command completed successfully.

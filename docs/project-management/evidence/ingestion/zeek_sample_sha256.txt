@@ -1,0 +1,3 @@
+SHA256 hash of data\raw\ingestion\zeek\zeek-conn-sample.jsonl:
+d48e7260a8ff47c49ec05b55e97c4977fef257b028172e5db2a69d5777241068
+CertUtil: -hashfile command completed successfully.
