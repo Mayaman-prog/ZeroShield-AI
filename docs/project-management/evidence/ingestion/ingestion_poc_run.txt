@@ -1,0 +1,23 @@
+{
+  "total_normalized_records": 2,
+  "suricata_records": 1,
+  "zeek_records": 1,
+  "evidence_types": {
+    "signature_alert": 1,
+    "network_telemetry": 1
+  },
+  "suricata_stats": {
+    "total_lines": 1,
+    "alerts_parsed": 1,
+    "non_alert_events_skipped": 0,
+    "malformed_json_lines": 0,
+    "invalid_alert_records": 0
+  },
+  "zeek_stats": {
+    "total_lines": 1,
+    "telemetry_parsed": 1,
+    "malformed_json_lines": 0,
+    "invalid_telemetry_records": 0
+  },
+  "output_path": "data\\processed\\ingestion\\zeroshield-ingestion-poc.jsonl"
+}

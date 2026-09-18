@@ -1,0 +1,49 @@
+ZeroShield AI - Isolated VirtualBox Laboratory
+
+VirtualBox Version:
+7.2.6r172322
+
+Host-Only Network:
+Name:            VirtualBox Host-Only Ethernet Adapter
+GUID:            8198ed43-36ed-4fa4-8c62-961dea66cc38
+DHCP:            Disabled
+IPAddress:       192.168.171.1
+NetworkMask:     255.255.255.0
+IPV6Address:     fe80::ee77:aee8:5ad8:1550
+IPV6NetworkMaskPrefixLength: 64
+HardwareAddress: 0a:00:27:00:00:0d
+MediumType:      Ethernet
+Wireless:        No
+Status:          Up
+VBoxNetworkName: HostInterfaceNetworking-VirtualBox Host-Only Ethernet Adapter
+
+
+=== Kali Linux ===
+NIC 1:                       disabled
+NIC 2:                       MAC: 080027731825, Attachment: Host-only Interface 'VirtualBox Host-Only Ethernet Adapter', Cable connected: on, Trace: off (file: none), Type: 82540EM, Reported speed: 0 Mbps, Boot priority: 0, Promisc Policy: allow-all, Bandwidth group: none
+NIC 3:                       disabled
+NIC 4:                       disabled
+NIC 5:                       disabled
+NIC 6:                       disabled
+NIC 7:                       disabled
+NIC 8:                       disabled
+
+=== Metasploitable2 ===
+NIC 1:                       disabled
+NIC 2:                       MAC: 080027D8A160, Attachment: Host-only Interface 'VirtualBox Host-Only Ethernet Adapter', Cable connected: on, Trace: off (file: none), Type: 82540EM, Reported speed: 0 Mbps, Boot priority: 0, Promisc Policy: allow-all, Bandwidth group: none
+NIC 3:                       disabled
+NIC 4:                       disabled
+NIC 5:                       disabled
+NIC 6:                       disabled
+NIC 7:                       disabled
+NIC 8:                       disabled
+
+=== Windows 7 ===
+NIC 1:                       disabled
+NIC 2:                       MAC: 080027F8F112, Attachment: Host-only Interface 'VirtualBox Host-Only Ethernet Adapter', Cable connected: on, Trace: off (file: none), Type: 82540EM, Reported speed: 0 Mbps, Boot priority: 0, Promisc Policy: deny, Bandwidth group: none
+NIC 3:                       disabled
+NIC 4:                       disabled
+NIC 5:                       disabled
+NIC 6:                       disabled
+NIC 7:                       disabled
+NIC 8:                       disabled
