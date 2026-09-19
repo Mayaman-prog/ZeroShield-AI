@@ -1,0 +1,12 @@
+{
+  "model_version": "poc-v1",
+  "contamination": 0.01,
+  "contamination_interpretation": "Fixed 1 percent PoC reference contamination assumption. This value was selected before attack evaluation and was not tuned using attack labels.",
+  "scikit_learn_offset": -0.6545803565979643,
+  "decision_function_threshold": 0.0,
+  "decision_function_rule": "decision_function < 0 means outlier under the fitted model.",
+  "anomaly_score_definition": "anomaly_score = -decision_function",
+  "anomaly_score_threshold": 0.0,
+  "anomaly_rule": "anomaly_score > 0 is flagged as anomalous.",
+  "formal_threshold_calibration": "Not performed in this initial PoC. A later planner task will calibrate the novelty threshold using validation data only."
+}

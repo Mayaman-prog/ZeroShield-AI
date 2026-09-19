@@ -1,0 +1,142 @@
+{
+  "experiment_type": "unsupervised_benign_reference_novelty_poc",
+  "model_version": "poc-v1",
+  "training_reference": "benign DataSense records only",
+  "feature_count": 71,
+  "benign_total_rows": 136800,
+  "benign_training_rows": 109440,
+  "benign_holdout_rows": 27360,
+  "attack_evaluation_rows": 90391,
+  "heldout_benign": {
+    "anomalous_rows": 284,
+    "anomaly_flag_rate": 0.010380116959064328,
+    "anomaly_score_summary": {
+      "minimum": -0.2925620375480539,
+      "p05": -0.2925620375480539,
+      "p25": -0.2925620375480539,
+      "median": -0.2925620375480539,
+      "p75": -0.1964469961411185,
+      "p95": -0.04724391158871424,
+      "maximum": 0.09545815089082188
+    }
+  },
+  "attack_evaluation": {
+    "anomalous_rows": 23102,
+    "anomaly_flag_rate": 0.2555785421114934,
+    "anomaly_score_summary": {
+      "minimum": -0.2925620375480539,
+      "p05": -0.2925620375480539,
+      "p25": -0.10078383361554649,
+      "median": -0.026486388568807806,
+      "p75": 0.0005384464052141658,
+      "p95": 0.055531143346194356,
+      "maximum": 0.11340908678501538
+    },
+    "per_attack_category": {
+      "bruteforce": {
+        "rows": 1868,
+        "anomalous_rows": 255,
+        "anomaly_flag_rate": 0.13650963597430407,
+        "anomaly_score_summary": {
+          "minimum": -0.2925620375480539,
+          "p05": -0.2925620375480539,
+          "p25": -0.13163838509025894,
+          "median": -0.047487415116189535,
+          "p75": -0.02168151121226905,
+          "p95": 0.02761661333051856,
+          "maximum": 0.07363633428846927
+        }
+      },
+      "ddos": {
+        "rows": 18056,
+        "anomalous_rows": 5978,
+        "anomaly_flag_rate": 0.3310810810810811,
+        "anomaly_score_summary": {
+          "minimum": -0.2925620375480539,
+          "p05": -0.2925620375480539,
+          "p25": -0.06446000774135074,
+          "median": -0.014272794342902018,
+          "p75": 0.007338671194191848,
+          "p95": 0.045956642096609324,
+          "maximum": 0.10419144641830769
+        }
+      },
+      "dos": {
+        "rows": 18420,
+        "anomalous_rows": 4956,
+        "anomaly_flag_rate": 0.26905537459283385,
+        "anomaly_score_summary": {
+          "minimum": -0.2925620375480539,
+          "p05": -0.19812110790320162,
+          "p25": -0.06429596503183177,
+          "median": -0.023767331441694295,
+          "p75": 0.004533694980508707,
+          "p95": 0.03261853807716464,
+          "maximum": 0.11340908678501538
+        }
+      },
+      "malware": {
+        "rows": 7541,
+        "anomalous_rows": 4941,
+        "anomaly_flag_rate": 0.6552181408301286,
+        "anomaly_score_summary": {
+          "minimum": -0.2925620375480539,
+          "p05": -0.265771188577332,
+          "p25": -0.029202429664642926,
+          "median": 0.04090423678961064,
+          "p75": 0.07012184155272927,
+          "p95": 0.085792270368106,
+          "maximum": 0.10017706117997027
+        }
+      },
+      "mitm": {
+        "rows": 8062,
+        "anomalous_rows": 1253,
+        "anomaly_flag_rate": 0.1554204911932523,
+        "anomaly_score_summary": {
+          "minimum": -0.2925620375480539,
+          "p05": -0.2925620375480539,
+          "p25": -0.16553226271999308,
+          "median": -0.07857370644804829,
+          "p75": -0.013877283443227362,
+          "p95": 0.02098407794459701,
+          "maximum": 0.0914940393685505
+        }
+      },
+      "recon": {
+        "rows": 33648,
+        "anomalous_rows": 4200,
+        "anomaly_flag_rate": 0.12482168330955777,
+        "anomaly_score_summary": {
+          "minimum": -0.2925620375480539,
+          "p05": -0.2925620375480539,
+          "p25": -0.18849591406883048,
+          "median": -0.03778468849346772,
+          "p75": -0.015514244673129923,
+          "p95": 0.021464386099711776,
+          "maximum": 0.10324600046137
+        }
+      },
+      "web": {
+        "rows": 2796,
+        "anomalous_rows": 1519,
+        "anomaly_flag_rate": 0.5432761087267525,
+        "anomaly_score_summary": {
+          "minimum": -0.2925620375480539,
+          "p05": -0.2925620375480539,
+          "p25": -0.10901006422277004,
+          "median": 0.007019109680566293,
+          "p75": 0.05361530955400906,
+          "p95": 0.05536860173326974,
+          "maximum": 0.06577582698913176
+        }
+      }
+    }
+  },
+  "timing_seconds": {
+    "training": 2.4790620999992825,
+    "benign_holdout_inference": 1.2002069000009215,
+    "attack_inference": 2.566516799997771
+  },
+  "interpretation": "Anomaly flag rates describe how often records fall outside the learned benign reference boundary. They are not maliciousness probabilities and do not prove previously unseen attacks."
+}

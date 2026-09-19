@@ -1,0 +1,5 @@
+isolation-forest
+## isolation-forest...origin/isolation-forest
+?? docs/project-management/evidence/isolation_forest/
+?? src/ml/isolation_forest_poc/
+74a394e feat(ml): add reproducible XGBoost known-class training PoC with 71-feature schema, multiclass evaluation, model versioning and validation tests

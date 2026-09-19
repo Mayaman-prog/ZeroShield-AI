@@ -1,0 +1,16 @@
+ Volume in drive D is New Volume
+ Volume Serial Number is 8813-9F5D
+
+ Directory of D:\Zero-Shield-Dataset\extracted\benign
+
+18-Sep-26  12:48 PM        84,430,351 benign_samples_1sec.csv
+               1 File(s)     84,430,351 bytes
+               0 Dir(s)  844,742,426,624 bytes free
+ Volume in drive D is New Volume
+ Volume Serial Number is 8813-9F5D
+
+ Directory of D:\Zero-Shield-Dataset\extracted\attack
+
+17-Sep-25  02:09 AM       759,131,083 attack_samples_1sec.csv
+               1 File(s)    759,131,083 bytes
+               0 Dir(s)  844,742,426,624 bytes free
