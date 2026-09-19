@@ -1,0 +1,3 @@
+SHA256 hash of models\xgboost\zeroshield_xgboost_known_class_poc.json:
+ec8b0d2ca0fbd66e7efb62cb4d719b1729bd4f791ee6d40c80cc9ef40719767b
+CertUtil: -hashfile command completed successfully.

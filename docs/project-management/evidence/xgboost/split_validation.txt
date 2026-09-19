@@ -1,0 +1,41 @@
+Loading attack dataset...
+Loading benign dataset...
+
+Known-class split successful.
+{
+  "random_seed": 42,
+  "test_size": 0.2,
+  "feature_count": 71,
+  "training_rows": 181752,
+  "testing_rows": 45439,
+  "training_class_distribution": {
+    "benign": 109439,
+    "bruteforce": 1494,
+    "ddos": 14445,
+    "dos": 14736,
+    "malware": 6033,
+    "mitm": 6450,
+    "recon": 26918,
+    "web": 2237
+  },
+  "testing_class_distribution": {
+    "benign": 27361,
+    "bruteforce": 374,
+    "ddos": 3611,
+    "dos": 3684,
+    "malware": 1508,
+    "mitm": 1612,
+    "recon": 6730,
+    "web": 559
+  },
+  "class_mapping": {
+    "benign": 0,
+    "bruteforce": 1,
+    "ddos": 2,
+    "dos": 3,
+    "malware": 4,
+    "mitm": 5,
+    "recon": 6,
+    "web": 7
+  }
+}

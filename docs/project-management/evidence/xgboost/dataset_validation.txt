@@ -1,0 +1,32 @@
+Loading attack dataset...
+Loading benign dataset...
+
+Dataset validation successful.
+{
+  "rows": 227191,
+  "feature_count": 71,
+  "target_column": "label2",
+  "class_count": 8,
+  "class_mapping": {
+    "benign": 0,
+    "bruteforce": 1,
+    "ddos": 2,
+    "dos": 3,
+    "malware": 4,
+    "mitm": 5,
+    "recon": 6,
+    "web": 7
+  },
+  "class_distribution": {
+    "benign": 136800,
+    "bruteforce": 1868,
+    "ddos": 18056,
+    "dos": 18420,
+    "malware": 7541,
+    "mitm": 8062,
+    "recon": 33648,
+    "web": 2796
+  },
+  "missing_values": 0,
+  "infinite_values": 0
+}

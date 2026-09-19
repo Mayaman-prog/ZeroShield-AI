@@ -1,0 +1,13 @@
+test_feature_schema_matches (test_xgboost_poc.TestXGBoostKnownClassPoC.test_feature_schema_matches) ... ok
+test_known_class_mapping_is_preserved (test_xgboost_poc.TestXGBoostKnownClassPoC.test_known_class_mapping_is_preserved) ... ok
+test_probabilities_cover_trained_classes_only (test_xgboost_poc.TestXGBoostKnownClassPoC.test_probabilities_cover_trained_classes_only) ... ok
+test_reloaded_accuracy_matches_saved_metrics (test_xgboost_poc.TestXGBoostKnownClassPoC.test_reloaded_accuracy_matches_saved_metrics) ... ok
+test_reloaded_macro_f1_matches_saved_metrics (test_xgboost_poc.TestXGBoostKnownClassPoC.test_reloaded_macro_f1_matches_saved_metrics) ... ok
+test_reloaded_model_prediction_shape (test_xgboost_poc.TestXGBoostKnownClassPoC.test_reloaded_model_prediction_shape) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 7.353s
+
+OK
+Loading attack dataset...
+Loading benign dataset...
