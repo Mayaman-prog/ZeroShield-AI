@@ -1,0 +1,31 @@
+ZeroShield AI - ZS-021 Evidence Schema Validation Summary
+
+Schema version: 1.0.0
+
+Supported evidence sources:
+Suricata - signature_alert
+Zeek - network_telemetry
+XGBoost - supervised_classification
+Isolation Forest - anomaly_evidence
+
+Positive validation:
+4 of 4 example detector records validated successfully.
+
+Negative validation:
+10 automated schema tests passed.
+
+The schema rejects:
+source/evidence-type mismatches
+prohibited universal maliciousness probability fields
+invalid XGBoost probability distributions
+inconsistent Isolation Forest anomaly scores
+inconsistent Isolation Forest anomaly flags
+missing model provenance
+timestamps without timezone information
+unsupported schema versions
+invalid raw evidence structures
+
+Design outcome:
+One common evidence envelope is used across all detector sources while detector-specific semantics, provenance and interpretation limits remain separate.
+
+ZeroShield does not collapse Suricata, Zeek, XGBoost and Isolation Forest outputs into one universal threat probability.
