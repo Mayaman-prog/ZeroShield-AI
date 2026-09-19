@@ -1,0 +1,5 @@
+Python: 3.13.6 (tags/v3.13.6:4e66535, Aug  6 2025, 14:36:00) [MSC v.1944 64 bit (AMD64)]
+NumPy: 2.5.3
+pandas: 3.0.6
+scikit-learn: 1.9.1
+XGBoost: 3.4.1

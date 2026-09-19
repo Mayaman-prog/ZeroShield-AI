@@ -1,0 +1,24 @@
+Loading and splitting dataset...
+Loading attack dataset...
+Loading benign dataset...
+
+Training XGBoost known-class model...
+Training completed in 26.24 seconds.
+Running inference on test set...
+
+Known-class XGBoost PoC completed.
+Model version: poc-v1
+Accuracy: 0.9410
+Balanced accuracy: 0.8728
+Macro F1: 0.9170
+Weighted F1: 0.9393
+Training time: 26.24 seconds
+Average inference time: 0.011140 ms/record
+
+Model saved to: models\xgboost\zeroshield_xgboost_known_class_poc.json
+Metrics saved to: experiments\xgboost\xgboost_known_class_metrics.json
+Feature schema saved to: experiments\xgboost\xgboost_feature_schema.json
+Metadata saved to: experiments\xgboost\xgboost_model_metadata.json
+
+IMPORTANT: XGBoost output represents known trained-class evidence only.
+It must not be interpreted as novelty evidence or a universal maliciousness probability.
