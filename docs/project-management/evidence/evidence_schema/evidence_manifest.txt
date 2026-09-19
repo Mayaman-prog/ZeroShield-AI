@@ -1,0 +1,39 @@
+ZeroShield AI - ZS-021 Evidence Manifest
+
+Requirement: ZS-021
+Task: Define common incident evidence record and detector provenance schema
+Schema version: 1.0.0
+
+Supported detector sources:
+Suricata - signature_alert
+Zeek - network_telemetry
+XGBoost - supervised_classification
+Isolation Forest - anomaly_evidence
+
+Validation:
+4 of 4 valid example records passed schema validation.
+10 of 10 automated schema tests passed.
+
+Source files:
+example_records.py
+export_examples.py
+schema.py
+__init__.py
+__pycache__
+
+Test files:
+test_evidence_schema.py
+__pycache__
+
+Evidence files:
+evidence_manifest.txt
+example_records.json
+example_validation.txt
+git_start.txt
+schema_design.txt
+schema_tests.txt
+validation_summary.txt
+
+Design outcome:
+Common evidence envelope defined with detector-specific provenance, semantics and interpretation limits preserved.
+No universal maliciousness or zero-day probability is created from heterogeneous detector evidence.

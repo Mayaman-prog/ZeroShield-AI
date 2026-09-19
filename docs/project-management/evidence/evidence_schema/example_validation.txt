@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "validated_records": 4,
+  "results": [
+    {
+      "evidence_id": "evidence-suricata-001",
+      "source": "suricata",
+      "evidence_type": "signature_alert",
+      "schema_version": "1.0.0",
+      "validation": "passed"
+    },
+    {
+      "evidence_id": "evidence-zeek-001",
+      "source": "zeek",
+      "evidence_type": "network_telemetry",
+      "schema_version": "1.0.0",
+      "validation": "passed"
+    },
+    {
+      "evidence_id": "evidence-xgboost-001",
+      "source": "xgboost",
+      "evidence_type": "supervised_classification",
+      "schema_version": "1.0.0",
+      "validation": "passed"
+    },
+    {
+      "evidence_id": "evidence-isolation-forest-001",
+      "source": "isolation_forest",
+      "evidence_type": "anomaly_evidence",
+      "schema_version": "1.0.0",
+      "validation": "passed"
+    }
+  ],
+  "design_statement": "All four detector sources share the common ZeroShield evidence envelope while retaining source-specific detector semantics and provenance."
+}

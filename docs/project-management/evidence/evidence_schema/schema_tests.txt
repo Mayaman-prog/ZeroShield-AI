@@ -1,0 +1,15 @@
+test_01_all_valid_examples_pass (test_evidence_schema.TestEvidenceSchema.test_01_all_valid_examples_pass) ... ok
+test_02_source_and_evidence_type_mismatch_rejected (test_evidence_schema.TestEvidenceSchema.test_02_source_and_evidence_type_mismatch_rejected) ... ok
+test_03_universal_probability_field_rejected (test_evidence_schema.TestEvidenceSchema.test_03_universal_probability_field_rejected) ... ok
+test_04_xgboost_probabilities_must_sum_to_one (test_evidence_schema.TestEvidenceSchema.test_04_xgboost_probabilities_must_sum_to_one) ... ok
+test_05_isolation_forest_score_semantics_enforced (test_evidence_schema.TestEvidenceSchema.test_05_isolation_forest_score_semantics_enforced) ... ok
+test_06_isolation_forest_flag_must_match_threshold (test_evidence_schema.TestEvidenceSchema.test_06_isolation_forest_flag_must_match_threshold) ... ok
+test_07_missing_model_provenance_rejected (test_evidence_schema.TestEvidenceSchema.test_07_missing_model_provenance_rejected) ... ok
+test_08_timestamp_without_timezone_rejected (test_evidence_schema.TestEvidenceSchema.test_08_timestamp_without_timezone_rejected) ... ok
+test_09_unsupported_schema_version_rejected (test_evidence_schema.TestEvidenceSchema.test_09_unsupported_schema_version_rejected) ... ok
+test_10_raw_evidence_must_be_dictionary (test_evidence_schema.TestEvidenceSchema.test_10_raw_evidence_must_be_dictionary) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.002s
+
+OK
