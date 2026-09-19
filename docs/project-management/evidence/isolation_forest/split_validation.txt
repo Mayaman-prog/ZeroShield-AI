@@ -1,0 +1,15 @@
+ZeroShield AI - ZS-020 Isolation Forest PoC
+
+Benign reference split
+Random seed: 42
+Training proportion: 80 percent
+Held-out benign proportion: 20 percent
+
+Total benign records: 136800
+Benign reference training records: 109440
+Held-out benign evaluation records: 27360
+Attack evaluation records: 90391
+
+Isolation Forest fitting uses benign reference records only.
+Held-out benign and attack records are not used for model fitting.
+Attack labels are used only for post-training evaluation.

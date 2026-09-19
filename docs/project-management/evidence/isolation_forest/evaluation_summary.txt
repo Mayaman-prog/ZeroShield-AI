@@ -1,0 +1,62 @@
+ZeroShield AI - ZS-020 Isolation Forest Novelty-Detection PoC
+
+Model: Isolation Forest poc-v1
+Model role: anomaly / novelty evidence
+
+DATA AND FEATURES
+DataSense CIC IIoT 2025 1-second baseline
+Shared leakage-controlled numeric features: 71
+Total benign records: 136800
+Benign training records: 109440
+Held-out benign records: 27360
+Attack evaluation records: 90391
+Random seed: 42
+
+MODEL CONFIGURATION
+n_estimators: 200
+contamination: 0.01
+max_samples: auto
+max_features: 1.0
+bootstrap: False
+
+THRESHOLD SEMANTICS
+decision_function below 0 = anomalous under the fitted PoC boundary
+anomaly_score = -decision_function
+anomaly_score above 0 = anomalous
+
+The 1 percent contamination value is a fixed PoC assumption.
+It was not tuned using attack labels.
+Formal threshold calibration is deferred to the later validation-threshold task.
+
+RESULTS
+Held-out benign anomaly flag rate: 0.0104
+Attack evaluation anomaly flag rate: 0.2556
+
+Per-category anomaly flag rates:
+bruteforce: 0.1365 - 255 of 1868
+ddos: 0.3311 - 5978 of 18056
+dos: 0.2691 - 4956 of 18420
+malware: 0.6552 - 4941 of 7541
+mitm: 0.1554 - 1253 of 8062
+recon: 0.1248 - 4200 of 33648
+web: 0.5433 - 1519 of 2796
+
+VALIDATION
+Automated tests passed: 6 of 6
+Saved model reload validated
+Feature schema consistency validated
+Reproducible benign split validated
+Threshold configuration validated
+Anomaly-score semantics validated
+Saved metrics reproduction validated
+
+LIMITATIONS
+Isolation Forest did not flag all attack records as anomalous.
+Recon, bruteforce and MITM showed relatively low anomaly flag rates.
+This demonstrates that attack traffic is not necessarily statistically anomalous relative to the benign reference.
+
+INTERPRETATION
+Isolation Forest output is anomaly / novelty evidence only.
+Anomaly does not mean malicious.
+The anomaly score is not a maliciousness probability.
+The model does not independently prove a previously unseen or zero-day attack.

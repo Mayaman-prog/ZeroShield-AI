@@ -1,0 +1,29 @@
+ZeroShield Isolation Forest PoC training complete
+Model version: poc-v1
+Features: 71
+Benign training rows: 109440
+Held-out benign rows: 27360
+Attack evaluation rows: 90391
+Contamination: 0.01
+Isolation Forest offset: -0.654580
+Held-out benign anomaly flag rate: 0.0104
+Attack anomaly flag rate: 0.2556
+Training time: 2.48 seconds
+
+Per-attack-category anomaly flag rates:
+  bruteforce: 0.1365 (255/1868)
+  ddos: 0.3311 (5978/18056)
+  dos: 0.2691 (4956/18420)
+  malware: 0.6552 (4941/7541)
+  mitm: 0.1554 (1253/8062)
+  recon: 0.1248 (4200/33648)
+  web: 0.5433 (1519/2796)
+
+Interpretation:
+Isolation Forest output is anomaly/novelty evidence relative to learned benign reference behaviour.
+It is NOT a maliciousness probability and does NOT independently prove a previously unseen or zero-day attack.
+
+Model saved to: models\isolation_forest\zeroshield_isolation_forest_poc.joblib
+Metrics saved to: experiments\isolation_forest\isolation_forest_metrics.json
+Metadata saved to: experiments\isolation_forest\isolation_forest_model_metadata.json
+Threshold config saved to: experiments\isolation_forest\isolation_forest_threshold_config.json

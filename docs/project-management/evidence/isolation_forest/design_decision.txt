@@ -1,0 +1,12 @@
+ZeroShield AI - ZS-020 Isolation Forest PoC
+
+Feature-schema decision:
+The Isolation Forest PoC will reuse the same 71 leakage-controlled numeric DataSense features used by the XGBoost known-class PoC.
+
+Reason:
+This prevents feature-definition drift between supervised known-class evidence and anomaly/novelty evidence and improves reproducibility.
+
+Detector semantics remain separate:
+XGBoost = supervised evidence among trained classes.
+Isolation Forest = anomaly/novelty evidence relative to learned reference behaviour.
+Anomaly does not mean malicious and does not prove a zero-day attack.

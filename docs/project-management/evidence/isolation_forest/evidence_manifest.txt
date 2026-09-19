@@ -1,0 +1,34 @@
+ZeroShield AI - ZS-020 Evidence Manifest
+
+Evidence files:
+dataset_paths.txt
+dataset_validation.txt
+design_decision.txt
+environment_versions.txt
+evaluation_summary.txt
+evidence_manifest.txt
+git_start.txt
+isolation_forest_tests.txt
+model_git_ignore.txt
+model_sha256.txt
+split_validation.txt
+training_run.txt
+
+Experiment artefacts:
+.gitkeep
+isolation_forest_feature_schema.json
+isolation_forest_metrics.json
+isolation_forest_model_metadata.json
+isolation_forest_threshold_config.json
+
+Source files:
+data_loader.py
+train_isolation_forest.py
+__init__.py
+
+Test file:
+tests\unit\ml\test_isolation_forest_poc.py
+
+Generated model:
+models\isolation_forest\zeroshield_isolation_forest_poc.joblib
+Model is intentionally ignored by Git; SHA-256 is retained as evidence.
