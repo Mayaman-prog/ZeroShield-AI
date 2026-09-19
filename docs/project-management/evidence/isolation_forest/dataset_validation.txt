@@ -1,0 +1,42 @@
+{
+  "experiment": "ZeroShield Isolation Forest Novelty-Detection PoC",
+  "random_seed": 42,
+  "benign_holdout_size": 0.2,
+  "feature_count": 71,
+  "benign_total_rows": 136800,
+  "benign_reference_training_rows": 109440,
+  "benign_holdout_rows": 27360,
+  "attack_evaluation_rows": 90391,
+  "validation": {
+    "feature_count": 71,
+    "benign_rows": 136800,
+    "attack_rows": 90391,
+    "benign_labels": [
+      "benign"
+    ],
+    "attack_labels": [
+      "bruteforce",
+      "ddos",
+      "dos",
+      "malware",
+      "mitm",
+      "recon",
+      "web"
+    ],
+    "attack_distribution": {
+      "bruteforce": 1868,
+      "ddos": 18056,
+      "dos": 18420,
+      "malware": 7541,
+      "mitm": 8062,
+      "recon": 33648,
+      "web": 2796
+    },
+    "benign_missing_values": 0,
+    "attack_missing_values": 0,
+    "benign_infinite_values": 0,
+    "attack_infinite_values": 0,
+    "training_semantics": "Isolation Forest fitting uses benign reference records only. Attack labels are retained solely for post-training evaluation."
+  },
+  "interpretation": "Isolation Forest produces anomaly/novelty evidence relative to learned benign reference behaviour. Anomaly does not by itself mean malicious behaviour or prove a zero-day attack."
+}

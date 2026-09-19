@@ -1,0 +1,11 @@
+test_01_saved_model_loads (test_isolation_forest_poc.TestIsolationForestPoC.test_01_saved_model_loads) ... ok
+test_02_feature_schema_matches_xgboost (test_isolation_forest_poc.TestIsolationForestPoC.test_02_feature_schema_matches_xgboost) ... ok
+test_03_benign_split_is_reproducible (test_isolation_forest_poc.TestIsolationForestPoC.test_03_benign_split_is_reproducible) ... ok
+test_04_threshold_configuration_matches_model (test_isolation_forest_poc.TestIsolationForestPoC.test_04_threshold_configuration_matches_model) ... ok
+test_05_anomaly_score_semantics (test_isolation_forest_poc.TestIsolationForestPoC.test_05_anomaly_score_semantics) ... ok
+test_06_saved_metrics_reproduce (test_isolation_forest_poc.TestIsolationForestPoC.test_06_saved_metrics_reproduce) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 11.528s
+
+OK
