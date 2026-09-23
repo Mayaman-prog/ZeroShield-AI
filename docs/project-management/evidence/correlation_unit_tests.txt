@@ -1,0 +1,29 @@
+test_01_first_record_creates_incident (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_01_first_record_creates_incident)
+The first valid evidence record should create ... ok
+test_02_exact_flow_is_correlated (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_02_exact_flow_is_correlated)
+Evidence with the same: ... ok
+test_03_partial_flow_supports_missing_ports (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_03_partial_flow_supports_missing_ports)
+Suricata and Zeek examples contain no ports. ... ok
+test_04_reverse_flow_is_supported (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_04_reverse_flow_is_supported)
+Evidence describing the same communication ... ok
+test_05_event_outside_window_creates_new_incident (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_05_event_outside_window_creates_new_incident)
+Events more than five seconds apart should ... ok
+test_06_protocol_mismatch_does_not_correlate (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_06_protocol_mismatch_does_not_correlate)
+Matching hosts and timestamps should not be ... ok
+test_07_duplicate_evidence_id_is_ignored (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_07_duplicate_evidence_id_is_ignored)
+The same evidence_id must not be added twice ... ok
+test_08_isolation_forest_only_is_novelty_only (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_08_isolation_forest_only_is_novelty_only)
+Isolation Forest anomaly evidence by itself ... ok
+test_09_zeek_only_is_context_only (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_09_zeek_only_is_context_only)
+Zeek telemetry alone must remain contextual ... ok
+test_10_detector_conflict_is_preserved (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_10_detector_conflict_is_preserved)
+If XGBoost indicates benign while Isolation ... ok
+test_11_inactive_incident_can_be_closed (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_11_inactive_incident_can_be_closed)
+An incident should be closable after the ... ok
+test_12_invalid_evidence_schema_is_rejected (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_12_invalid_evidence_schema_is_rejected)
+Correlation must not bypass Evidence ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.003s
+
+OK

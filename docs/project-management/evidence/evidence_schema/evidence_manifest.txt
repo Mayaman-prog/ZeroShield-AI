@@ -19,11 +19,9 @@ example_records.py
 export_examples.py
 schema.py
 __init__.py
-__pycache__
 
 Test files:
 test_evidence_schema.py
-__pycache__
 
 Evidence files:
 evidence_manifest.txt
