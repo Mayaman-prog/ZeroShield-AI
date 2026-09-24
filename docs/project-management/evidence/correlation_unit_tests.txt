@@ -22,8 +22,20 @@ test_11_inactive_incident_can_be_closed (tests.unit.evidence_correlation.test_ev
 An incident should be closable after the ... ok
 test_12_invalid_evidence_schema_is_rejected (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_12_invalid_evidence_schema_is_rejected)
 Correlation must not bypass Evidence ... ok
+test_13_exact_five_second_boundary_correlates (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_13_exact_five_second_boundary_correlates)
+Evidence exactly five seconds apart should still ... ok
+test_14_conflicting_ports_do_not_correlate (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_14_conflicting_ports_do_not_correlate)
+Same hosts, protocol and time must not override ... ok
+test_15_missing_ip_does_not_force_match (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_15_missing_ip_does_not_force_match)
+Evidence missing a required correlation address ... ok
+test_16_out_of_order_evidence_can_correlate (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_16_out_of_order_evidence_can_correlate)
+Evidence arriving later but carrying an earlier ... ok
+test_17_equal_candidates_remain_unresolved (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_17_equal_candidates_remain_unresolved)
+If two incidents are equally valid candidates, ... ok
+test_18_closed_incident_does_not_accept_new_evidence (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_18_closed_incident_does_not_accept_new_evidence)
+Once an incident is closed, later evidence must ... ok
 
 ----------------------------------------------------------------------
-Ran 12 tests in 0.003s
+Ran 18 tests in 0.002s
 
 OK

@@ -1,0 +1,73 @@
+test_01_all_valid_examples_pass (tests.unit.evidence_schema.test_evidence_schema.TestEvidenceSchema.test_01_all_valid_examples_pass) ... ok
+test_02_source_and_evidence_type_mismatch_rejected (tests.unit.evidence_schema.test_evidence_schema.TestEvidenceSchema.test_02_source_and_evidence_type_mismatch_rejected) ... ok
+test_03_universal_probability_field_rejected (tests.unit.evidence_schema.test_evidence_schema.TestEvidenceSchema.test_03_universal_probability_field_rejected) ... ok
+test_04_xgboost_probabilities_must_sum_to_one (tests.unit.evidence_schema.test_evidence_schema.TestEvidenceSchema.test_04_xgboost_probabilities_must_sum_to_one) ... ok
+test_05_isolation_forest_score_semantics_enforced (tests.unit.evidence_schema.test_evidence_schema.TestEvidenceSchema.test_05_isolation_forest_score_semantics_enforced) ... ok
+test_06_isolation_forest_flag_must_match_threshold (tests.unit.evidence_schema.test_evidence_schema.TestEvidenceSchema.test_06_isolation_forest_flag_must_match_threshold) ... ok
+test_07_missing_model_provenance_rejected (tests.unit.evidence_schema.test_evidence_schema.TestEvidenceSchema.test_07_missing_model_provenance_rejected) ... ok
+test_08_timestamp_without_timezone_rejected (tests.unit.evidence_schema.test_evidence_schema.TestEvidenceSchema.test_08_timestamp_without_timezone_rejected) ... ok
+test_09_unsupported_schema_version_rejected (tests.unit.evidence_schema.test_evidence_schema.TestEvidenceSchema.test_09_unsupported_schema_version_rejected) ... ok
+test_10_raw_evidence_must_be_dictionary (tests.unit.evidence_schema.test_evidence_schema.TestEvidenceSchema.test_10_raw_evidence_must_be_dictionary) ... ok
+test_malformed_suricata_does_not_crash_parser (tests.unit.ingestion.test_ingestion_poc.TestZeroShieldIngestionPoC.test_malformed_suricata_does_not_crash_parser) ... ok
+test_malformed_zeek_does_not_crash_parser (tests.unit.ingestion.test_ingestion_poc.TestZeroShieldIngestionPoC.test_malformed_zeek_does_not_crash_parser) ... ok
+test_multi_source_ingestion_preserves_semantics (tests.unit.ingestion.test_ingestion_poc.TestZeroShieldIngestionPoC.test_multi_source_ingestion_preserves_semantics) ... ok
+test_feature_schema_matches (tests.unit.ml.test_xgboost_poc.TestXGBoostKnownClassPoC.test_feature_schema_matches) ... ok
+test_known_class_mapping_is_preserved (tests.unit.ml.test_xgboost_poc.TestXGBoostKnownClassPoC.test_known_class_mapping_is_preserved) ... ok
+test_probabilities_cover_trained_classes_only (tests.unit.ml.test_xgboost_poc.TestXGBoostKnownClassPoC.test_probabilities_cover_trained_classes_only) ... ok
+test_reloaded_accuracy_matches_saved_metrics (tests.unit.ml.test_xgboost_poc.TestXGBoostKnownClassPoC.test_reloaded_accuracy_matches_saved_metrics) ... ok
+test_reloaded_macro_f1_matches_saved_metrics (tests.unit.ml.test_xgboost_poc.TestXGBoostKnownClassPoC.test_reloaded_macro_f1_matches_saved_metrics) ... ok
+test_reloaded_model_prediction_shape (tests.unit.ml.test_xgboost_poc.TestXGBoostKnownClassPoC.test_reloaded_model_prediction_shape) ... ok
+D:\ZeroShield-AI\.venv\Lib\site-packages\joblib\numpy_pickle.py:207: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5.
+As an alternative, you can create a new view using np.reshape (with copy=False if needed).
+  array.shape = self.shape
+test_01_saved_model_loads (tests.unit.ml.test_isolation_forest_poc.TestIsolationForestPoC.test_01_saved_model_loads) ... ok
+test_02_feature_schema_matches_xgboost (tests.unit.ml.test_isolation_forest_poc.TestIsolationForestPoC.test_02_feature_schema_matches_xgboost) ... ok
+test_03_benign_split_is_reproducible (tests.unit.ml.test_isolation_forest_poc.TestIsolationForestPoC.test_03_benign_split_is_reproducible) ... ok
+test_04_threshold_configuration_matches_model (tests.unit.ml.test_isolation_forest_poc.TestIsolationForestPoC.test_04_threshold_configuration_matches_model) ... ok
+test_05_anomaly_score_semantics (tests.unit.ml.test_isolation_forest_poc.TestIsolationForestPoC.test_05_anomaly_score_semantics) ... ok
+test_06_saved_metrics_reproduce (tests.unit.ml.test_isolation_forest_poc.TestIsolationForestPoC.test_06_saved_metrics_reproduce) ... ok
+test_01_first_record_creates_incident (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_01_first_record_creates_incident)
+The first valid evidence record should create ... ok
+test_02_exact_flow_is_correlated (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_02_exact_flow_is_correlated)
+Evidence with the same: ... ok
+test_03_partial_flow_supports_missing_ports (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_03_partial_flow_supports_missing_ports)
+Suricata and Zeek examples contain no ports. ... ok
+test_04_reverse_flow_is_supported (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_04_reverse_flow_is_supported)
+Evidence describing the same communication ... ok
+test_05_event_outside_window_creates_new_incident (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_05_event_outside_window_creates_new_incident)
+Events more than five seconds apart should ... ok
+test_06_protocol_mismatch_does_not_correlate (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_06_protocol_mismatch_does_not_correlate)
+Matching hosts and timestamps should not be ... ok
+test_07_duplicate_evidence_id_is_ignored (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_07_duplicate_evidence_id_is_ignored)
+The same evidence_id must not be added twice ... ok
+test_08_isolation_forest_only_is_novelty_only (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_08_isolation_forest_only_is_novelty_only)
+Isolation Forest anomaly evidence by itself ... ok
+test_09_zeek_only_is_context_only (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_09_zeek_only_is_context_only)
+Zeek telemetry alone must remain contextual ... ok
+test_10_detector_conflict_is_preserved (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_10_detector_conflict_is_preserved)
+If XGBoost indicates benign while Isolation ... ok
+test_11_inactive_incident_can_be_closed (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_11_inactive_incident_can_be_closed)
+An incident should be closable after the ... ok
+test_12_invalid_evidence_schema_is_rejected (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_12_invalid_evidence_schema_is_rejected)
+Correlation must not bypass Evidence ... ok
+test_13_exact_five_second_boundary_correlates (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_13_exact_five_second_boundary_correlates)
+Evidence exactly five seconds apart should still ... ok
+test_14_conflicting_ports_do_not_correlate (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_14_conflicting_ports_do_not_correlate)
+Same hosts, protocol and time must not override ... ok
+test_15_missing_ip_does_not_force_match (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_15_missing_ip_does_not_force_match)
+Evidence missing a required correlation address ... ok
+test_16_out_of_order_evidence_can_correlate (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_16_out_of_order_evidence_can_correlate)
+Evidence arriving later but carrying an earlier ... ok
+test_17_equal_candidates_remain_unresolved (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_17_equal_candidates_remain_unresolved)
+If two incidents are equally valid candidates, ... ok
+test_18_closed_incident_does_not_accept_new_evidence (tests.unit.evidence_correlation.test_evidence_correlation.TestEvidenceCorrelation.test_18_closed_incident_does_not_accept_new_evidence)
+Once an incident is closed, later evidence must ... ok
+
+----------------------------------------------------------------------
+Ran 43 tests in 18.405s
+
+OK
+Skipping malformed JSON on line 2: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+Skipping malformed Zeek JSON on line 2: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+Loading attack dataset...
+Loading benign dataset...

@@ -551,6 +551,315 @@ class TestEvidenceCorrelation(unittest.TestCase):
                 record
             )
 
+    def test_13_exact_five_second_boundary_correlates(self):
+        """
+        Evidence exactly five seconds apart should still
+        correlate because the configured window is inclusive.
+        """
+
+        first_record = build_xgboost_example()
+
+        second_record = build_isolation_forest_example()
+
+        second_record[
+            "evidence_id"
+        ] = "evidence-boundary-002"
+
+        second_record[
+            "timestamp"
+        ] = "2026-09-19T12:00:05+00:00"
+
+        first_incident, _ = (
+            self.engine.process(
+                first_record
+            )
+        )
+
+        second_incident, decision = (
+            self.engine.process(
+                second_record
+            )
+        )
+
+        self.assertEqual(
+            first_incident.incident_id,
+            second_incident.incident_id,
+        )
+
+        self.assertEqual(
+            decision.match_type,
+            MatchType.EXACT_FLOW.value,
+        )
+
+    def test_14_conflicting_ports_do_not_correlate(self):
+        """
+        Same hosts, protocol and time must not override
+        explicitly conflicting port information.
+        """
+
+        first_record = build_xgboost_example()
+
+        second_record = build_isolation_forest_example()
+
+        second_record[
+            "evidence_id"
+        ] = "evidence-port-conflict-002"
+
+        second_record[
+            "source_port"
+        ] = 55555
+
+        second_record[
+            "destination_port"
+        ] = 443
+
+        second_record[
+            "timestamp"
+        ] = "2026-09-19T12:00:01+00:00"
+
+        first_incident, _ = (
+            self.engine.process(
+                first_record
+            )
+        )
+
+        second_incident, decision = (
+            self.engine.process(
+                second_record
+            )
+        )
+
+        self.assertNotEqual(
+            first_incident.incident_id,
+            second_incident.incident_id,
+        )
+
+        self.assertEqual(
+            decision.decision,
+            DecisionType.CREATED.value,
+        )
+
+    def test_15_missing_ip_does_not_force_match(self):
+        """
+        Evidence missing a required correlation address
+        should not be forced into an existing incident.
+        """
+
+        first_record = build_xgboost_example()
+
+        second_record = build_isolation_forest_example()
+
+        second_record[
+            "evidence_id"
+        ] = "evidence-missing-ip-002"
+
+        second_record[
+            "source_ip"
+        ] = None
+
+        second_record[
+            "timestamp"
+        ] = "2026-09-19T12:00:01+00:00"
+
+        first_incident, _ = (
+            self.engine.process(
+                first_record
+            )
+        )
+
+        second_incident, decision = (
+            self.engine.process(
+                second_record
+            )
+        )
+
+        self.assertNotEqual(
+            first_incident.incident_id,
+            second_incident.incident_id,
+        )
+
+        self.assertEqual(
+            decision.decision,
+            DecisionType.CREATED.value,
+        )
+
+    def test_16_out_of_order_evidence_can_correlate(self):
+        """
+        Evidence arriving later but carrying an earlier
+        event timestamp should still correlate when it
+        falls inside the configured window.
+        """
+
+        first_record = build_xgboost_example()
+
+        first_record[
+            "timestamp"
+        ] = "2026-09-19T12:00:04+00:00"
+
+        second_record = build_isolation_forest_example()
+
+        second_record[
+            "evidence_id"
+        ] = "evidence-out-of-order-002"
+
+        second_record[
+            "timestamp"
+        ] = "2026-09-19T12:00:01+00:00"
+
+        first_incident, _ = (
+            self.engine.process(
+                first_record
+            )
+        )
+
+        second_incident, decision = (
+            self.engine.process(
+                second_record
+            )
+        )
+
+        self.assertEqual(
+            first_incident.incident_id,
+            second_incident.incident_id,
+        )
+
+        self.assertEqual(
+            decision.match_type,
+            MatchType.EXACT_FLOW.value,
+        )
+
+        self.assertEqual(
+            second_incident.first_seen.isoformat(),
+            "2026-09-19T12:00:01+00:00",
+        )
+
+    def test_17_equal_candidates_remain_unresolved(self):
+        """
+        If two incidents are equally valid candidates,
+        correlation should remain unresolved instead
+        of forcing evidence into one incident.
+        """
+
+        first_record = build_xgboost_example()
+
+        first_record[
+            "source_port"
+        ] = 40001
+
+        first_record[
+            "destination_port"
+        ] = 80
+
+        second_record = build_xgboost_example()
+
+        second_record[
+            "evidence_id"
+        ] = "evidence-second-incident-002"
+
+        second_record[
+            "source_port"
+        ] = 40002
+
+        second_record[
+            "destination_port"
+        ] = 443
+
+        first_incident, _ = (
+            self.engine.process(
+                first_record
+            )
+        )
+
+        second_incident, _ = (
+            self.engine.process(
+                second_record
+            )
+        )
+
+        self.assertNotEqual(
+            first_incident.incident_id,
+            second_incident.incident_id,
+        )
+
+        ambiguous_record = build_zeek_example()
+
+        ambiguous_record[
+            "evidence_id"
+        ] = "evidence-ambiguous-003"
+
+        ambiguous_record[
+            "protocol"
+        ] = "TCP"
+
+        ambiguous_record[
+            "timestamp"
+        ] = "2026-09-19T12:00:00+00:00"
+
+        incident, decision = (
+            self.engine.process(
+                ambiguous_record
+            )
+        )
+
+        self.assertIsNone(
+            incident
+        )
+
+        self.assertEqual(
+            decision.decision,
+            DecisionType.UNRESOLVED.value,
+        )
+
+        self.assertIn(
+            ambiguous_record[
+                "evidence_id"
+            ],
+            self.engine.unresolved_evidence_ids,
+        )
+
+    def test_18_closed_incident_does_not_accept_new_evidence(self):
+        """
+        Once an incident is closed, later evidence must
+        not be attached back to that closed incident.
+        """
+
+        first_record = build_xgboost_example()
+
+        first_incident, _ = (
+            self.engine.process(
+                first_record
+            )
+        )
+
+        self.engine.close_inactive(
+            "2026-09-19T12:00:31+00:00"
+        )
+
+        second_record = build_isolation_forest_example()
+
+        second_record[
+            "evidence_id"
+        ] = "evidence-after-close-002"
+
+        second_record[
+            "timestamp"
+        ] = "2026-09-19T12:00:02+00:00"
+
+        second_incident, decision = (
+            self.engine.process(
+                second_record
+            )
+        )
+
+        self.assertNotEqual(
+            first_incident.incident_id,
+            second_incident.incident_id,
+        )
+
+        self.assertEqual(
+            decision.decision,
+            DecisionType.CREATED.value,
+        )
 
 if __name__ == "__main__":
     unittest.main(
